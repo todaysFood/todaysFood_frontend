@@ -1,0 +1,30 @@
+.marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 150px;
+  height: auto;
+  text-align: center;
+  padding: 5px;
+  background-color: rgba(60, 174, 163, 0.5);
+  border-radius: 10px;
+  font-family: SpoqaHanSans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+  /* identical to box height */
+
+  text-transform: capitalize;
+}
+
+.zoom-out-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #3caea3;
+  opacity: 0.9;
+  border: 1px solid #bbbbbb;
+}

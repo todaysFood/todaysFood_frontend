@@ -1,0 +1,37 @@
+{
+    "cards": [
+        {
+            "card_id" : 1,
+            "user_id":1,
+            "store_id":1,
+            "review":"나만 알고싶은 아메리카노 최애 맛집이에요~ 맛있는 디저트와 예쁜 인테리어~ 당근케잌도 먹으려했는데 오늘 품절이라니 아쉽네요~ 오레오케익과 아메리카노로 좋은 시간 보내고 갑니다~^^",
+            "thumb_nail_image":"http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019"
+
+    },
+    {
+        "card_id" : 2,
+        "user_id":2,
+        "store_id":2,
+        "review":"산딸기호밀빵. 찹쌀도넛 맛~굿~ 착한가격 맛있답니다",
+        "thumb_nail_image":"https://lh3.googleusercontent.com/proxy/tTTseaGpVXbM0zPYADU01avGUaUl_i7DNQHp5p6RIfszsu2oj0LItx5LUHUbw4lthiWNMedg8yRpUgT08YzMzDaeyG5ILWUGNbM__lqVR0qnX7fHwsYZV5yxK7nkq3obQgX5zGIjNt7oy7WXLPOHCJva0EYqnM6c-qmA91H7nOeyhK27CGlO8CxdCsjp6d5pgpe40CJEOkCO0VKyd3fqU3io_ZnPpBvigBmLLemQ6j71lIt7AsC3tYu0C981yD1WZ0tLdWZfcG90Wo4TxNJKbx7iLk3vyDxc9h4u5uqnR6lSk2rhwnF6H_0NX2fX066e9c0CepYr-264vgXRTQ1Q3mba73Bt0DlwCdK8v3GVW62BHhdrlyZIOvIkYJ5qHFEDMRj5MdbqR72H"
+},
+{
+    "card_id" : 3,"user_id":3,
+    "store_id":5,
+    "review": "맛있습니다. 가격도 적당해요",
+    "thumb_nail_image":"https://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/026/550/original/IMG_2236s.jpg?2019&d=750x400"
+},
+{
+    "card_id" : 4,"user_id":4,
+    "store_id":4,
+    "review":"앞에 지나가면서 보기만하다가 오늘 한번 포장으로 사와서 먹었는데 생각했던 것보다 훨씬 맛있네요. 고기도 부드럽고 치즈도 쭉쭉 늘어나서 아이가 좋아했답니다~ 저는 개인적으로 매운맛소스가 맛있었어요ㅎ다음에 또 먹으러 가겠습니다~^^",
+    "thumb_nail_image":"https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/03/a0003495/img/basic/a0003495_main.jpg?20190823151731&q=80&rw=750&rh=536"
+},
+{
+    "card_id" : 5,"user_id":2,
+    "store_id":3,
+    "review":"쾌적하고 주차장 넓고 맛있어요.",
+    "thumb_nail_image":"https://t1.daumcdn.net/cfile/tistory/998792415A31ADE616"
+}
+    ]
+}
