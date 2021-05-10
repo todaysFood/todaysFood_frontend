@@ -1,0 +1,38 @@
+.container {
+  margin: 10px;
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.img_container {
+  width: 55px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  font-size: 5px;
+}
+
+.name_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin-left: 15px;
+}
+.name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 1px;
+  font-weight: 700;
+  color: #242424;
+  letter-spacing: -0.2px;
+}
+.review_count {
+  font-size: 12px;
+  color: #9a9a9a;
+  letter-spacing: -0.2px;
+}
