@@ -7,7 +7,7 @@ function Header() {
   const geo = useContext(GeoContext);
   console.log(geo);
   return (
-    <div className={`${style.container}`}>
+    <header className={`${style.container}`}>
       <div className={`${style.logo}`}>오늘의 음식</div>
       <span className={`${style.title}`}>
         날씨가 좋네요. 오늘의 추천 음식은 <br></br>
@@ -19,7 +19,7 @@ function Header() {
         </span>{" "}
         입니다.
       </span>
-    </div>
+    </header>
   );
 }
 

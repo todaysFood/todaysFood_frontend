@@ -25,13 +25,13 @@ function BodyRouter({ resetGeoLocation }) {
         >
           지도
         </NavLink>
-        {/* <NavLink
+        <NavLink
           to="/feed"
           className={`${style.link}`}
           activeClassName={`${style.active_link}`}
         >
           피드
-        </NavLink> */}
+        </NavLink>
       </div>
       <div className={`${style.get_location_container}`}>
         <div className={`${style.get_location}`}>
@@ -54,9 +54,9 @@ function BodyRouter({ resetGeoLocation }) {
         </div>
       </div>
       <Switch>
-        {/* <Route path="/feed">
+        <Route path="/feed">
           <Feed />
-        </Route> */}
+        </Route>
         <Route path="/map">
           <Map />
         </Route>
