@@ -5,7 +5,6 @@ import PersonalInfo from "./Personal/personal_info";
 
 function Header() {
   const geo = useContext(GeoContext);
-  console.log(geo);
   return (
     <header className={`${style.container}`}>
       <div className={`${style.logo}`}>오늘의 음식</div>

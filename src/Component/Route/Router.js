@@ -14,10 +14,30 @@ import postionImage from "../../source/gps.png";
 
 function BodyRouter({ resetGeoLocation }) {
   const geo = useContext(GeoContext);
+  const [openedNav, setOpenedNav] = useState(false);
+  function openNav() {
+    console.log(openedNav);
+    if (openedNav) {
+      setOpenedNav(false);
+    } else {
+      setOpenedNav(true);
+    }
+  }
+
+  let classRouter = `${style.router}`;
+  let classBurger = `gnb-open-btn-burger ${style.icon_hamburger}`;
+  let classClose = `gnb-open-btn-close ${style.icon_x}`;
+  if (openedNav) {
+    classRouter += " is-open";
+
+    classClose += " is-open";
+  } else {
+    classBurger += " is-open";
+  }
 
   return (
-    <Router>
-      <div id="router" className={`${style.router}`}>
+    <Router className={`${style.router_container}`}>
+      <div id="router" className={`${classRouter}`}>
         <NavLink
           to="/map"
           className={`${style.link}`}
@@ -32,6 +52,8 @@ function BodyRouter({ resetGeoLocation }) {
         >
           피드
         </NavLink>
+        <span className={`${classBurger}`} onClick={() => openNav()}></span>
+        <span className={`${classClose}`} onClick={() => openNav()}></span>
       </div>
       <div className={`${style.get_location_container}`}>
         <div className={`${style.get_location}`}>
@@ -49,7 +71,6 @@ function BodyRouter({ resetGeoLocation }) {
               }}
               alt="위치이미지"
             />
-            현 위치
           </button>
         </div>
       </div>

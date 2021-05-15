@@ -19,3 +19,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#root {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  #router.is-open {
+    left: 0;
+    right: 0;
+  }
+  .gnb-open-btn-burger {
+    display: none;
+  }
+  .gnb-open-btn-burger.is-open {
+    display: block;
+    background-image: url("./source/images/button-navigation.svg");
+    position: absolute;
+    right: calc(150vw + 30px);
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+  }
+  .gnb-open-btn-close {
+    display: none;
+  }
+  .gnb-open-btn-close.is-open {
+    display: block;
+    background-image: url("./source/images/button-detail-close.svg");
+    content: "x";
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+  }
+}
