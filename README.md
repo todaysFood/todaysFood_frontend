@@ -20,6 +20,7 @@ https://adoring-heyrovsky-d172e9.netlify.app/
 
 1. 날씨에 맞는 오늘의 음식 추천
 2. 인근의 오늘의 음식점 추천
+3. 음식점에 대한 후기 공유
 
 ## 스크린샷
 
@@ -32,8 +33,11 @@ https://adoring-heyrovsky-d172e9.netlify.app/
 - React
 - css.module
 - naver map api
+- oauth 2.0
+- 반응형 웹사이트
 
 #### 백엔드
 
-- flask(python)
+- ~~flask(python)~~
+- django
 - open api(공공 데이터 포털)
