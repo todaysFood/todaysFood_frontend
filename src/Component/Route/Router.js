@@ -7,8 +7,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import style from "./Router.module.css";
-import Feed from "./Feed/feed";
-import Map from "./Map/map";
+import Feed from "./Feed/Feed";
+import Map from "./Map/Map";
 import { GeoContext } from "../../App";
 import postionImage from "../../source/gps.png";
 

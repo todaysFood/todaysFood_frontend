@@ -1,3 +1,8 @@
+@media screen and (max-width: 768px) {
+  .profile_container {
+    display: none;
+  }
+}
 .profile_container {
   background-image: url("../../../source/images/user.svg");
   background-color: #dddddd;

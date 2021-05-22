@@ -5,7 +5,7 @@ import getStores from "../../../util/getStores";
 import "./marker.css";
 import style from "./map.module.css";
 import legend from "../../../data/legend.json";
-import MapList from "./MapList/mapList";
+import MapList from "./MapList/MapList.js";
 // import storesTest from "../../../test_data/store_data.json";
 
 function Map() {
@@ -66,7 +66,6 @@ function Map() {
 
         {stores &&
           stores.map((store) => {
-            console.log(stores);
             return (
               <MapList
                 key={Number(store.id)}

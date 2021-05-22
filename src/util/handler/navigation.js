@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const gnbCloseBtn = document.querySelector(".gnb-ope-btn-close");
   const globalNavBar = document.querySelector("#router");
   const header = document.querySelector(".header");
-  let prevDep2List = null;
-  console.log(gnbBurgerBtn);
   // gnb 햄버거 메뉴버튼 클릭시 gnb 메뉴 보이기
   gnbBurgerBtn.addEventListener("click", function () {
     gnbBurgerBtn.classList.toggle("is-open");
