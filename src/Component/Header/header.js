@@ -1,13 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GeoContext } from "../../App";
 import style from "./header.module.css";
-import PersonalInfo from "./Personal/personal_info";
-
+import NavUser from "../User/NavUser/NavUser";
 function Header() {
   const geo = useContext(GeoContext);
   return (
     <header className={`${style.container}`}>
-      <div className={`${style.logo}`}>오늘의 음식</div>
+      <div className={`${style.logo}`}>
+        오늘의 음식
+        <NavUser />
+      </div>
       <span className={`${style.title}`}>
         날씨가 좋네요. 오늘의 추천 음식은 <br></br>
         <span>
