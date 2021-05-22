@@ -1,0 +1,66 @@
+.wrapper {
+  padding: 30px 50px 50px;
+}
+h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.form_control {
+  display: block;
+  width: 300px;
+  height: 40px;
+  margin: 10px;
+  padding-left: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(232, 240, 254);
+  opacity: 0.5;
+  color: gray;
+}
+.form_control:nth-child(2) {
+  margin-bottom: 20px;
+}
+.form_control:focus {
+  color: black;
+  background-color: rgb(232, 240, 254);
+  opacity: 1;
+}
+.form_control::placeholder {
+  color: gray;
+}
+.form_control:active {
+  color: black;
+}
+.email {
+}
+.password {
+}
+.login_button {
+  position: relative;
+  width: 320px;
+  height: 2rem;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background: #ff3366;
+  font-size: 1rem;
+  border-radius: 3rem;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.3s 0.15s, font-size 0.1s;
+}
