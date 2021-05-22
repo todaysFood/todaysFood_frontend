@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./login.module.css";
 
-function Login({ closeModal }) {
+function Login({ closeModal, setModalSignIn }) {
   return (
     <div className={`${style.wrapper}`}>
       <h1>로그인</h1>
@@ -24,7 +24,12 @@ function Login({ closeModal }) {
           type="password"
           className={`${style.form_control}`}
         />
-
+        <div className={`${style.changeSingIn}`}>
+          계정이 없으면{" "}
+          <a href="#none" onClick={() => setModalSignIn()}>
+            회원가입
+          </a>
+        </div>
         <button
           type="submit"
           id="login-button"

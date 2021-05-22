@@ -46,7 +46,7 @@ h1 {
 .form_control:active {
   color: black;
 }
-.changeSingIn {
+.changeLogin {
   font-size: 0.8rem;
 }
 .login_button {
