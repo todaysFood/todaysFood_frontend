@@ -56,3 +56,8 @@ code {
     background-size: 30px 30px;
   }
 }
+.ReactModal__Overlay {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+  z-index: 3;
+}

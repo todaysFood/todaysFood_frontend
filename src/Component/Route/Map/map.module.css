@@ -13,7 +13,7 @@
     max-height: 90%;
     background-color: white;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     left: 40px;
     top: 40px;
     border-radius: 10px;
@@ -65,7 +65,7 @@
   }
 
   .react-naver-map {
-    z-index: 1;
+    z-index: -2;
   }
   .list_container_mobile_show {
     display: none;

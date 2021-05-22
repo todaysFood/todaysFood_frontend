@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./feed.module.css";
-import Card from "./Card/card";
+import Card from "./Card/Card.js";
 import cardData from "../../../test_data/card_data.json";
 
 function Feed() {

@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./card.module.css";
-import Profile from "../Profile/profile";
+import Profile from "../Profile/Profile.js";
 import users from "../../../../test_data/user_data.json";
 import stores from "../../../../test_data/store_data.json";
 
-import CardDetailLinkBox from "./CardDetailLinkBox/cardDetailLinkBox";
+import CardDetailLinkBox from "./CardDetailLinkBox/CardDetailLinkBox.js";
 
 function Card({ id, userId, storeId, review, thumb_nail_image }) {
   const user = users.users.filter((user) => user.user_id === userId)[0];
