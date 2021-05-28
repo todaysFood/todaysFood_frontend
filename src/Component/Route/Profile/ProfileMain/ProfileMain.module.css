@@ -1,0 +1,34 @@
+.container {
+  display: block;
+  width: 500px;
+  height: 250px;
+  margin: 60px auto 0;
+}
+.profile_photo {
+  width: 200px;
+  height: 200px;
+  vertical-align: top;
+  float: left;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+.profile_name {
+  display: inline-block;
+  text-align: center;
+  height: 100px;
+  width: 290px;
+  font-size: 3rem;
+  vertical-align: top;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+}
+.profile_feed {
+  display: inline-block;
+  height: 50px;
+  width: 290px;
+  text-align: center;
+  font-size: 2rem;
+  vertical-align: top;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
