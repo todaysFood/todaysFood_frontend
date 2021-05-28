@@ -6,6 +6,7 @@ import "./marker.css";
 import style from "./map.module.css";
 import legend from "../../../data/legend.json";
 import MapList from "./MapList/MapList.js";
+import CurrentPositionButton from "../../Buttons/CurrentPositionButton/CurrentPositionButton";
 // import storesTest from "../../../test_data/store_data.json";
 
 function Map() {
@@ -52,6 +53,7 @@ function Map() {
 
   return (
     <div className={`${style.container}`}>
+      <CurrentPositionButton />
       <div
         className={`${
           listClick ? style.list_container : style.list_container_mobile_show
@@ -89,7 +91,6 @@ function Map() {
       >
         현 위치에서 찾기
       </div>
-
       <RenderAfterNavermapsLoaded
         ncpClientId={"vmwwi5c4v1"} // 자신의 네이버 계정에서 발급받은 Client ID
         error={<p>Maps Load Error</p>}

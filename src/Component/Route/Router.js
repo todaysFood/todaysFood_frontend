@@ -9,14 +9,14 @@ import {
 import style from "./Router.module.css";
 import Feed from "./Feed/Feed";
 import Map from "./Map/Map";
-import { GeoContext } from "../../App";
-import postionImage from "../../source/gps.png";
+import Profile from "./Profile/Profile";
+import { UserContext } from "../../App";
 
-function BodyRouter({ resetGeoLocation }) {
-  const geo = useContext(GeoContext);
+function BodyRouter() {
+  const user = useContext(UserContext);
+
   const [openedNav, setOpenedNav] = useState(false);
   function openNav() {
-    console.log(openedNav);
     if (openedNav) {
       setOpenedNav(false);
     } else {
@@ -52,34 +52,27 @@ function BodyRouter({ resetGeoLocation }) {
         >
           피드
         </NavLink>
+        <NavLink
+          to="/user"
+          className={`${style.link}`}
+          activeClassName={`${style.active_link}`}
+          onClick={!user.isLoggedIn ? user.openModal : null}
+        >
+          내 정보
+        </NavLink>
         <span className={`${classBurger}`} onClick={() => openNav()}></span>
         <span className={`${classClose}`} onClick={() => openNav()}></span>
       </div>
-      <div className={`${style.get_location_container}`}>
-        <div className={`${style.get_location}`}>
-          <button
-            className={`${style.set_location_button}`}
-            onClick={() => geo.setGeoLocation()}
-          >
-            <img
-              src={postionImage}
-              style={{
-                width: 20,
-                height: 20,
-                color: "#2d8dee",
-                marginRight: 5,
-              }}
-              alt="위치이미지"
-            />
-          </button>
-        </div>
-      </div>
+
       <Switch>
         <Route path="/feed">
           <Feed />
         </Route>
         <Route path="/map">
           <Map />
+        </Route>
+        <Route path="/user">
+          <Profile />
         </Route>
 
         <Route exact path="/">
