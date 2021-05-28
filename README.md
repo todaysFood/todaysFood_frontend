@@ -16,6 +16,14 @@
 
 https://adoring-heyrovsky-d172e9.netlify.app/
 
+## 개발환경 실행
+
+1. git clone https://github.com/todaysFood/todaysFood_frontend.git
+
+2. develop branch 이동
+
+3. npm start 로 실행
+
 ## 기능
 
 1. 날씨에 맞는 오늘의 음식 추천

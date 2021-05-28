@@ -1,0 +1,14 @@
+.login_button {
+  display: block;
+  width: 300px;
+  height: 4rem;
+  margin: 100px auto 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: #ff3366;
+  font-size: 2rem;
+  border-radius: 3rem;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.3s 0.15s, font-size 0.1s;
+}
