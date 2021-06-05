@@ -17,7 +17,6 @@ function Login({ closeModal, setModalSignIn }) {
   };
   const login = () => {
     try {
-      console.log(email);
       const user = fetchLogin(email, pw);
       if (user) {
         globalUser.setIsLoggedIn(true);

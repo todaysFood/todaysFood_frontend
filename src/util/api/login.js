@@ -1,5 +1,3 @@
-import userEvent from "@testing-library/user-event";
-import { useState } from "react";
 import users from "../../test_data/user_data.json";
 
 const fetchLogin = (email, password) => {
