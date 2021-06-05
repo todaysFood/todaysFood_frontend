@@ -9,7 +9,6 @@ const ProfileLogin = () => {
     <button
       className={`${style.login_button}`}
       onClick={!user.isLoggedIn ? user.openModal : null}
-      g
     >
       로그인
     </button>

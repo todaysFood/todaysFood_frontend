@@ -19,7 +19,6 @@ const CurrentPositionButton = () => {
               width: 20,
               height: 20,
               color: "#2d8dee",
-              marginRight: 5,
             }}
             alt="위치이미지"
           />
