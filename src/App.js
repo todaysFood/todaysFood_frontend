@@ -16,7 +16,7 @@ function App() {
   getGeoLoca.then(function (value) {
     setGeoLocation(value);
     if (!todays) {
-      getToday(value.latitude, value.longitude).then((value) => {
+      getToday(value.latitude, value.longitude).then(value => {
         setTodays(value);
       });
     }
@@ -42,6 +42,7 @@ function App() {
   // 유저 관련 전역 객체 정보
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalState, setModalState] = useState("로그인");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   function setModalSignIn() {
     setModalState("회원가입");
   }
@@ -57,7 +58,8 @@ function App() {
     setIsOpen(false);
   }
   const userObject = {
-    isLoggedIn: false,
+    isLoggedIn: isLoggedIn,
+    setIsLoggedIn: setIsLoggedIn,
     modalIsOpen: modalIsOpen,
     setModalLogIn: setModalLogIn,
     setModalSignIn: setModalSignIn,
