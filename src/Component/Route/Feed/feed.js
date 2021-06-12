@@ -2,9 +2,11 @@ import React from "react";
 import style from "./feed.module.css";
 import Card from "./Card/Card.js";
 import cardData from "../../../test_data/card_data.json";
+import fetchFeed from "../../../util/api/getFeed";
 
 function Feed() {
-  const cards = cardData.cards;
+  const cards = fetchFeed().cards;
+  console.log(cards);
   return (
     <div className={`${style.container}`}>
       {cards.map((card) => (
