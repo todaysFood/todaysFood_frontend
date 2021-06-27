@@ -13,10 +13,11 @@ function getToday(lat, log) {
   )
     .then(function (resp) {
       // 응답 형식에 따라 resp.text() 가 될 수도 있다
+      console.log(resp)
       return resp.json();
     })
     .catch((reject) => {
-      console.log(reject);
+      // console.log(reject);
     });
 }
 export default getToday;

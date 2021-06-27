@@ -43,7 +43,7 @@ function App() {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalState, setModalState] = useState("로그인");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  function setModalSignIn() {
+  function setModalSignIn() { 
     setModalState("회원가입");
   }
   function setModalLogIn() {

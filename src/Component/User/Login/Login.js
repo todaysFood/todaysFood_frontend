@@ -18,6 +18,7 @@ function Login({ closeModal, setModalSignIn }) {
   const login = () => {
     try {
       const user = fetchLogin(email, pw);
+      console.log(user)
       if (user) {
         globalUser.setIsLoggedIn(true);
         globalUser.closeModal();
@@ -32,7 +33,7 @@ function Login({ closeModal, setModalSignIn }) {
       <h1>로그인</h1>
 
       <form className={`${style.form}`}>
-        <label for="login_email" className={`${style.label}`}>
+        <label htmlFor="login_email" className={`${style.label}`}>
           이메일
         </label>
         <input
@@ -43,7 +44,7 @@ function Login({ closeModal, setModalSignIn }) {
           value={email}
         />
 
-        <label for="login_pw" className={`${style.label}`}>
+        <label htmlFor="login_pw" className={`${style.label}`}>
           패스워드
         </label>
         <input

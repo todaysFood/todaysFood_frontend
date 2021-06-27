@@ -5,8 +5,8 @@ import cardData from "../../../test_data/card_data.json";
 import fetchFeed from "../../../util/api/getFeed";
 
 function Feed() {
-  const cards = fetchFeed().cards;
-  console.log(cards);
+  
+  const cards = fetchFeed();
   return (
     <div className={`${style.container}`}>
       {cards.map((card) => (
