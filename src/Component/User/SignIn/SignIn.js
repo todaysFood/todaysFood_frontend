@@ -37,7 +37,7 @@ function SignIn({ closeModal, setModalLogIn }) {
       <h1>회원 가입</h1>
 
       <form className={`${style.form}`}>
-        <label for="login_email" className={`${style.label}`}>
+        <label htmlFor="login_email" className={`${style.label}`}>
           이메일
         </label>
         <input
@@ -47,7 +47,7 @@ function SignIn({ closeModal, setModalLogIn }) {
           onChange={onChangeEmail}
         />
 
-        <label for="login_pw" className={`${style.label}`}>
+        <label htmlFor="login_pw" className={`${style.label}`}>
           패스워드
         </label>
         <input
@@ -56,7 +56,7 @@ function SignIn({ closeModal, setModalLogIn }) {
           className={`${style.form_control}`}
           onChange={onChangePassword}
         />
-        <label for="login_name" className={`${style.label}`}>
+        <label htmlFor="login_name" className={`${style.label}`}>
           이름
         </label>
         <input
@@ -66,7 +66,7 @@ function SignIn({ closeModal, setModalLogIn }) {
           onChange={onChangeName}
         />
 
-        <label for="login_nickname" className={`${style.label}`}>
+        <label htmlFor="login_nickname" className={`${style.label}`}>
           닉네임
         </label>
         <input
