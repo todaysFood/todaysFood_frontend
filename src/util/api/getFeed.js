@@ -10,7 +10,8 @@ const fetchFeed = () => {
             "Content-type": "application/json; charset=UTF-8",
           },
         });
-    
+    console.dir(feeds);
+
     console.log(feeds.then(res => {
        return res.json();
     }).catch(err => {
