@@ -21,7 +21,7 @@
 
 ## 접속
 
-https://adoring-heyrovsky-d172e9.netlify.app/
+서버문제로 임시 폐쇄
 
 ## 기능
 
