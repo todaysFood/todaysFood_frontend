@@ -1,69 +1,62 @@
-import React, { useState, useContext, useEffect } from "react";
-import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps"; // 패키지 불러오기
-import { GeoContext } from "../../../App";
-import getStores from "../../../util/getStores";
-import "./marker.css";
-import style from "./map.module.css";
-import legend from "../../../data/legend.json";
-import MapList from "./MapList/MapList.js";
-import CurrentPositionButton from "../../Buttons/CurrentPositionButton/CurrentPositionButton";
-// import storesTest from "../../../test_data/store_data.json";
+import React, { useState, useContext, useEffect } from 'react'
+import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps' // 패키지 불러오기
+import { GeoContext } from '../../../App'
+import getStores from '../../../util/getStores'
+import './marker.css'
+import style from './map.module.css'
+import legend from '../../../data/legend.json'
+import MapList from './MapList/MapList.js'
+import CurrentPositionButton from '../../Buttons/CurrentPositionButton/CurrentPositionButton'
+import { debounce } from 'lodash'
 
 function Map() {
-  const geo = useContext(GeoContext);
-  const [stores, setStores] = useState([]);
+  const geo = useContext(GeoContext)
+  const [stores, setStores] = useState([])
   const [center, setCenter] = useState({
     distance: 300,
     center: { y: geo.geoLocation.latitude, x: geo.geoLocation.longitude },
-  });
+  })
 
-  useEffect(() => {
-    getStores(center.distance, center.center.y, center.center.x)
-      .then((stores) => {
-        setStores(stores);
-      })
-      .catch((rejected) => {
-        console.log(rejected);
-      });
-  }, []);
+  // useEffect(() => {
+  //   getStores(center.distance, center.center.y, center.center.x)
+  //     .then((stores) => {
+  //       setStores(stores)
+  //     })
+  //     .catch((rejected) => {
+  //       console.log(rejected)
+  //     })
+  // }, [])
 
-  const [zoomState, setZoomState] = useState(15);
+  const [zoomState, setZoomState] = useState(15)
   const findRealDistance = () => {
-    const temp = String(zoomState);
-    return legend[temp];
-  };
+    const temp = String(zoomState)
+    return legend[temp]
+  }
 
   const getDataByZoomChanged = (zoom) => {
-    setZoomState(zoom);
-  };
+    setZoomState(zoom)
+  }
 
   const scroll = () => {
-    let location = document.querySelector("#router").offsetTop;
-    window.scrollTo({ top: location, behavior: "smooth" });
-  };
-  const [listClick, setListClick] = useState(true);
+    let location = document.querySelector('#router').offsetTop
+    window.scrollTo({ top: location, behavior: 'smooth' })
+  }
+  const [listClick, setListClick] = useState(true)
 
   const clickList = () => {
     if (listClick) {
-      setListClick(false);
+      setListClick(false)
     } else {
-      setListClick(true);
+      setListClick(true)
     }
-  };
+  }
 
   return (
     <div className={`${style.container}`}>
       <CurrentPositionButton />
-      <div
-        className={`${
-          listClick ? style.list_container : style.list_container_mobile_show
-        }`}
-      >
-        <button
-          className={`${style.mobile_show_list}`}
-          onClick={() => clickList()}
-        >
-          {listClick ? "클릭해서 리스트 보기" : "클릭해서 닫기"}
+      <div className={`${listClick ? style.list_container : style.list_container_mobile_show}`}>
+        <button className={`${style.mobile_show_list}`} onClick={() => clickList()}>
+          {listClick ? '클릭해서 리스트 보기' : '클릭해서 닫기'}
         </button>
 
         {stores &&
@@ -76,31 +69,29 @@ function Map() {
                 category={store.category_name}
                 address={store.road_address_name}
               />
-            );
+            )
           })}
       </div>
       <div
         className={`${style.current_position_button}`}
         onClick={() =>
-          getStores(center.distance, center.center.y, center.center.x).then(
-            (stores) => {
-              setStores(stores);
-            }
-          )
+          getStores(center.distance, center.center.y, center.center.x).then((stores) => {
+            setStores(stores)
+          })
         }
       >
         현 위치에서 찾기
       </div>
       <RenderAfterNavermapsLoaded
-        ncpClientId={"vmwwi5c4v1"} // 자신의 네이버 계정에서 발급받은 Client ID
+        ncpClientId={'vmwwi5c4v1'} // 자신의 네이버 계정에서 발급받은 Client ID
         error={<p>Maps Load Error</p>}
         loading={<p>loading</p>}
       >
         <NaverMap
-          mapDivId={"react-naver-map"} // default: react-nave
+          mapDivId={'react-naver-map'} // default: react-nave
           style={{
-            width: "100%", // 네이버지도 가로 길이
-            height: "80vh", // 네이버지도 세로 길이
+            width: '100%', // 네이버지도 가로 길이
+            height: '80vh', // 네이버지도 세로 길이
           }}
           defaultCenter={{
             lat: geo.geoLocation.latitude,
@@ -109,26 +100,26 @@ function Map() {
           defaultZoom={15} // 지도 초기 확대 배율 => 해
           onMouseover={scroll}
           onZoomChanged={(zoom) => {
-            console.log(zoom);
-            getDataByZoomChanged(zoom);
-            const distance = findRealDistance();
+            getDataByZoomChanged(zoom)
+            const distance = findRealDistance()
             setCenter({
               distance: distance,
               center: {
                 x: center.center.x,
                 y: center.center.y,
               },
-            });
+            })
             getStores(center.distance, center.center.y, center.center.x)
               .then((stores) => {
-                setStores(stores);
+                setStores(stores)
               })
               .catch((rejected) => {
-                console.log(rejected);
-              });
+                console.log(rejected)
+              })
           }}
-          onCenterChanged={(center) => {
-            const distance = findRealDistance();
+          onCenterChanged={debounce((center) => {
+            console.log('나')
+            const distance = findRealDistance()
             if (center && distance) {
               setCenter({
                 center: {
@@ -136,9 +127,9 @@ function Map() {
                   y: center.y,
                 },
                 distance: distance,
-              });
+              })
             }
-          }}
+          }, 100)}
         >
           {stores &&
             stores.map((store) => {
@@ -148,14 +139,14 @@ function Map() {
                   position={{ lat: store.y, lng: store.x }}
                   animation={0}
                   onClick={() => {
-                    window.location.href = store.place_url;
+                    window.location.href = store.place_url
                   }}
                 />
-              );
+              )
             })}
         </NaverMap>
       </RenderAfterNavermapsLoaded>
     </div>
-  );
+  )
 }
-export default Map;
+export default Map
