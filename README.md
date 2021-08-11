@@ -41,7 +41,6 @@ https://adoring-heyrovsky-d172e9.netlify.app/
 - React
 - css.module
 - naver map api
-- oauth 2.0
 - 반응형 웹사이트
 
 #### 백엔드
