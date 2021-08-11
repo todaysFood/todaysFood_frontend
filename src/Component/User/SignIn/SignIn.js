@@ -4,7 +4,7 @@ import fetchSignIn from '../../../util/api/signIn'
 import { UserContext } from '../../../App'
 import { validateEmail, validatePassword, validateName } from '../../../util/validate'
 
-function SignIn({ closeModal, setModalLogIn }) {
+export default function SignIn({ closeModal, setModalLogIn }) {
   const globalUser = useContext(UserContext)
 
   const emailRef = useRef(null)
@@ -168,5 +168,3 @@ function SignIn({ closeModal, setModalLogIn }) {
     </div>
   )
 }
-
-export default SignIn

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps' // 패키지 불러오기
 import { GeoContext } from '../../../App'
 import getStores from '../../../util/getStores'
@@ -9,23 +9,13 @@ import MapList from './MapList/MapList.js'
 import CurrentPositionButton from '../../Buttons/CurrentPositionButton/CurrentPositionButton'
 import { debounce } from 'lodash'
 
-function Map() {
+export default function Map() {
   const geo = useContext(GeoContext)
   const [stores, setStores] = useState([])
   const [center, setCenter] = useState({
     distance: 300,
     center: { y: geo.geoLocation.latitude, x: geo.geoLocation.longitude },
   })
-
-  // useEffect(() => {
-  //   getStores(center.distance, center.center.y, center.center.x)
-  //     .then((stores) => {
-  //       setStores(stores)
-  //     })
-  //     .catch((rejected) => {
-  //       console.log(rejected)
-  //     })
-  // }, [])
 
   const [zoomState, setZoomState] = useState(15)
   const findRealDistance = () => {
@@ -97,7 +87,7 @@ function Map() {
             lat: geo.geoLocation.latitude,
             lng: geo.geoLocation.longitude,
           }} // 지도 초기 위치
-          defaultZoom={15} // 지도 초기 확대 배율 => 해
+          defaultZoom={15} // 지도 초기 확대 배율
           onMouseover={scroll}
           onZoomChanged={(zoom) => {
             getDataByZoomChanged(zoom)
@@ -149,4 +139,3 @@ function Map() {
     </div>
   )
 }
-export default Map

@@ -1,55 +1,41 @@
-import React, { useContext, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Redirect,
-} from "react-router-dom";
-import style from "./Router.module.css";
-import Feed from "./Feed/Feed";
-import Map from "./Map/Map";
-import Profile from "./Profile/Profile";
-import { UserContext } from "../../App";
+import React, { useContext, useState } from 'react'
+import { BrowserRouter as Router, Switch, Route, NavLink, Redirect } from 'react-router-dom'
+import style from './Router.module.css'
+import Feed from './Feed/Feed'
+import Map from './Map/Map'
+import Profile from './Profile/Profile'
+import { UserContext } from '../../App'
 
-function BodyRouter() {
-  const user = useContext(UserContext);
+export default function BodyRouter() {
+  const user = useContext(UserContext)
 
-  const [openedNav, setOpenedNav] = useState(false);
+  const [openedNav, setOpenedNav] = useState(false)
   function openNav() {
     if (openedNav) {
-      setOpenedNav(false);
+      setOpenedNav(false)
     } else {
-      setOpenedNav(true);
+      setOpenedNav(true)
     }
   }
 
-  let classRouter = `${style.router}`;
-  let classBurger = `gnb-open-btn-burger ${style.icon_hamburger}`;
-  let classClose = `gnb-open-btn-close ${style.icon_x}`;
+  let classRouter = `${style.router}`
+  let classBurger = `gnb-open-btn-burger ${style.icon_hamburger}`
+  let classClose = `gnb-open-btn-close ${style.icon_x}`
   if (openedNav) {
-    classRouter += " is-open";
+    classRouter += ' is-open'
 
-    classClose += " is-open";
+    classClose += ' is-open'
   } else {
-    classBurger += " is-open";
+    classBurger += ' is-open'
   }
 
   return (
     <Router className={`${style.router_container}`}>
       <div id="router" className={`${classRouter}`}>
-        <NavLink
-          to="/map"
-          className={`${style.link}`}
-          activeClassName={`${style.active_link}`}
-        >
+        <NavLink to="/map" className={`${style.link}`} activeClassName={`${style.active_link}`}>
           지도
         </NavLink>
-        <NavLink
-          to="/feed"
-          className={`${style.link}`}
-          activeClassName={`${style.active_link}`}
-        >
+        <NavLink to="/feed" className={`${style.link}`} activeClassName={`${style.active_link}`}>
           피드
         </NavLink>
         <NavLink
@@ -81,6 +67,5 @@ function BodyRouter() {
         <Redirect from="*" to="/" />
       </Switch>
     </Router>
-  );
+  )
 }
-export default BodyRouter;

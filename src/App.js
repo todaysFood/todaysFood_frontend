@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import Header from "./Component/Header/header";
-import BodyRouter from "./Component/Route/Router";
-import getGeoLoca from "./util/getGeoLocation";
-import getStores from "./util/getStores";
-import getToday from "./util/getToday";
+import React, { useState } from 'react'
+import Header from './Component/Header/header'
+import BodyRouter from './Component/Route/Router'
+import getGeoLocation from './util/getGeoLocation'
+import getStores from './util/getStores'
+import getToday from './util/getToday'
 
-export const GeoContext = React.createContext();
-export const UserContext = React.createContext();
+export const GeoContext = React.createContext()
+export const UserContext = React.createContext()
 
-function App() {
-  let stores = [];
-  const [todays, setTodays] = useState();
-  const [geoLocation, setGeoLocation] = useState();
+export default function App() {
+  let stores = []
+  const [todays, setTodays] = useState()
+  const [geoLocation, setGeoLocation] = useState()
 
-  getGeoLoca.then(function (value) {
-    setGeoLocation(value);
+  getGeoLocation.then(function (value) {
+    setGeoLocation(value)
     if (!todays) {
-      getToday(value.latitude, value.longitude).then(value => {
-        setTodays(value);
-      });
+      getToday(value.latitude, value.longitude).then((value) => {
+        setTodays(value)
+      })
     }
-  });
+  })
 
   const resetGeoLocation = () => {
-    getGeoLoca.then(function (value) {
-      setGeoLocation(value);
-    });
-  };
+    getGeoLocation.then(function (value) {
+      setGeoLocation(value)
+    })
+  }
   const geoObject = {
     stores: stores,
     todays: todays,
@@ -34,28 +34,28 @@ function App() {
 
     setGeoLocation: resetGeoLocation,
     setCustomGeoLocation: (distance, latitude, longitude) => {
-      this.stores = getStores(distance, latitude, longitude);
-      setGeoLocation({ latitude: latitude, longitude: longitude });
+      this.stores = getStores(distance, latitude, longitude)
+      setGeoLocation({ latitude: latitude, longitude: longitude })
     },
-  };
+  }
 
   // 유저 관련 전역 객체 정보
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalState, setModalState] = useState("로그인");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  function setModalSignIn() { 
-    setModalState("회원가입");
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const [modalState, setModalState] = useState('로그인')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  function setModalSignIn() {
+    setModalState('회원가입')
   }
   function setModalLogIn() {
-    setModalState("로그인");
+    setModalState('로그인')
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
   const userObject = {
     isLoggedIn: isLoggedIn,
@@ -66,7 +66,7 @@ function App() {
     openModal: openModal,
     closeModal: closeModal,
     modalState: modalState,
-  };
+  }
 
   return (
     <GeoContext.Provider value={geoObject}>
@@ -75,7 +75,5 @@ function App() {
         {geoLocation ? <BodyRouter /> : <div>loading</div>}
       </UserContext.Provider>
     </GeoContext.Provider>
-  );
+  )
 }
-
-export default App;
