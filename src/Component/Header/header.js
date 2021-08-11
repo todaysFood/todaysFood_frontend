@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";
-import { GeoContext, UserContext } from "../../App";
-import style from "./header.module.css";
-import NavUser from "../User/NavUser/NavUser";
-import LoginContainer from "../User/LoginContainer/LoginContainer";
+import React, { useContext, useState } from 'react'
+import { GeoContext, UserContext } from '../../App'
+import style from './header.module.css'
+import LoginContainer from '../User/LoginContainer/LoginContainer'
 
-function Header() {
-  const geo = useContext(GeoContext);
-  const user = useContext(UserContext);
+export default function Header() {
+  const geo = useContext(GeoContext)
+  const user = useContext(UserContext)
 
   return (
     <>
@@ -14,11 +13,7 @@ function Header() {
         <div className={`${style.logo}`}>
           오늘의 음식
           {user.isLoggedIn ? null : (
-            <div
-              aria-label="button"
-              onClick={user.openModal}
-              className={`${style.login_button}`}
-            >
+            <div aria-label="button" onClick={user.openModal} className={`${style.login_button}`}>
               로그인
             </div>
           )}
@@ -28,15 +23,13 @@ function Header() {
           <span>
             {geo.todays &&
               geo.todays.map((today) => (
-                <span className={`${style.title_detail}`}>{today + " "}</span>
+                <span className={`${style.title_detail}`}>{today + ' '}</span>
               ))}
-          </span>{" "}
+          </span>{' '}
           입니다.
         </span>
       </header>
       <LoginContainer />
     </>
-  );
+  )
 }
-
-export default Header;

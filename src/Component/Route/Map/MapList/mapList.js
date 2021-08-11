@@ -1,7 +1,7 @@
-import React from "react";
-import style from "./mapList.module.css";
+import React from 'react'
+import style from './mapList.module.css'
 
-function MapList({ key, name, url, category, address }) {
+export default function MapList({ key, name, url, category, address }) {
   return (
     <div className={`${style.container}`}>
       <a href={url} className={`${style.title}`}>
@@ -10,7 +10,5 @@ function MapList({ key, name, url, category, address }) {
       <p className={`${style.category}`}>{category}</p>
       <p className={`${style.address}`}>{address}</p>
     </div>
-  );
+  )
 }
-
-export default MapList;

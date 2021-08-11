@@ -1,24 +1,19 @@
 body {
   background-color: #f9f9f9;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif, "Malgun Gothic";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, 'Malgun Gothic';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 @font-face {
-  font-family: "Arita-dotum-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff")
-    format("woff");
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 #root {
   position: relative;
 }
@@ -33,7 +28,7 @@ code {
   }
   .gnb-open-btn-burger.is-open {
     display: block;
-    background-image: url("./source/images/button-navigation.svg");
+    background-image: url('./source/images/button-navigation.svg');
     position: absolute;
     right: calc(150vw + 30px);
     top: 30px;
@@ -46,8 +41,8 @@ code {
   }
   .gnb-open-btn-close.is-open {
     display: block;
-    background-image: url("./source/images/button-detail-close.svg");
-    content: "x";
+    background-image: url('./source/images/button-detail-close.svg');
+    content: 'x';
     position: absolute;
     right: 30px;
     top: 30px;

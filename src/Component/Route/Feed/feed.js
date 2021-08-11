@@ -4,8 +4,8 @@ import Card from './Card/Card.js'
 import cardData from '../../../test_data/card_data.json'
 import fetchFeed from '../../../util/api/getFeed'
 
-function Feed() {
-  const cards = fetchFeed()
+export default function Feed() {
+  const { cards } = cardData
   return (
     <div className={`${style.container}`}>
       {cards.map((card) => (
@@ -21,5 +21,3 @@ function Feed() {
     </div>
   )
 }
-
-export default Feed
