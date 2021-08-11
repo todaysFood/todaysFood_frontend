@@ -1,23 +1,17 @@
-import feed from '../../test_data/card_data.json';
+import feed from '../../test_data/card_data.json'
 
-const fetchFeed = () => {
-    //const feeds = fetch('api');
-    const feeds =  fetch(
-        "https://www.weatherplace.site/api/post",
-        {
-          method: "GET",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        });
-    console.dir(feeds);
-
-    console.log(feeds.then(res => {
-       return res.json();
-    }).catch(err => {
-        console.log(err);
-    }));
-    // if(!feed) alert('받아올 데이터가 없습니다.');
-
-};
-export default fetchFeed;
+const fetchFeed = async () => {
+  try {
+    const feeds = await fetch('https://www.weatherplace.site/api/post', {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+    if (!feeds) alert('받아올 데이터가 없습니다.')
+    else return feeds
+  } catch (e) {
+    console.error(e)
+  }
+}
+export default fetchFeed
